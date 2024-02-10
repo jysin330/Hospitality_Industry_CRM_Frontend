@@ -22,7 +22,7 @@ const MetricsPage = () => {
         });
     }
   }, [selectedCity]);
-  
+
   const netSaleChart = {
     labels: Array.from({ length: netSaleData.length }, (_, i) => i + 1),
     datasets: [
@@ -86,7 +86,20 @@ const MetricsPage = () => {
         <option value="Goa">Goa</option>
         <option value="Jaipur">Jaipur</option>
       </select>
+      <div>
+        {/* Render Line Graph for Net Sale */}
+        <Line data={netSaleChart} />
+      </div>
 
+      <div>
+        {/* Render Bar Graph for Net Expense */}
+        <Bar data={netExpenseChart} />
+      </div>
+
+      <div>
+        {/* Render Doughnut Chart for Target Remaining */}
+        <Doughnut data={targetRemainingChart} />
+      </div>
       
     </div>
   );
